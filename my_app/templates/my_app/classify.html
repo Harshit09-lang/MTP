@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Monitoring System</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6e6e6; /* Lighter gray background */
+            text-align: center;
+            padding: 40px 0; /* More vertical padding */
+        }
+
+        h1 {
+            color: #20619b; /* Blue heading color */
+        }
+
+        form {
+            margin: 20px auto;
+            width: 80%; /* Wider form */
+            max-width: 400px; /* Maximum width to maintain readability */
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            border-radius: 12px; /* Rounder corners */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+        }
+
+        input[type="submit"] {
+            background-color: #00406b; /* Lighter blue background */
+            color: #fff;
+            border: none;
+            padding: 12px 24px; /* Larger button padding */
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #428dcf; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Blood Monitoring System</h1>
+    <form action="/predict/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{sequence_file_input}}
+        <h1>Model Input</h1>
+        {{model_file_input}}
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>

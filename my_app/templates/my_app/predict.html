@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Monitoring System</title>
+    <style>
+        body {
+            background: #4545a1;
+            /* background-size: 100% 100%; Ensure the gradient fills the entire background */
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #000000; /* Blue heading color */
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #333; /* Border color */
+            padding: 10px; /* Slightly increased padding */
+            text-align: left;
+            transition: transform 0.2s ease; /* Smooth transition for zoom effect */
+        }
+        th {
+            background-color: #000000; /* Blue background for headers */
+            color: #fff; /* White text color for headers */
+        }
+        tr:nth-child(odd) {
+            background-color: #f2f2f2; /* Light gray background for odd rows */
+        }
+        tr:nth-child(even) {
+            background-color: #e6e6e6; /* Light gray background for even rows */
+        }
+        td:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Predicted values of the Temperature</h1>
+    <table>
+        <tr>
+            <th>Timestamps</th>
+            <th>Prediction Value</th>
+        </tr>
+        {% for element in elements %}
+        <tr>
+            <td>{{ element.0 }}</td>
+            <td>{{ element.1 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
